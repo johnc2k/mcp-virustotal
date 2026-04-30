@@ -10,6 +10,8 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *'  # Every day at 2:00 AM UTC
 
 env:
   REGISTRY: ghcr.io
