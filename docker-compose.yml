@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  mcp-virustotal:
+    image: ghcr.io/johnc2k/mcp-virustotal:latest
+    container_name: mcp-virustotal
+    ports:
+      - "3000:3000"
+    environment:
+      - VIRUSTOTAL_API_KEY=${VIRUSTOTAL_API_KEY}
+      - MCP_TRANSPORT=httpStream
+      - MCP_PORT=3000
+      - FASTMCP_HOST=0.0.0.0
+      - MCP_ENDPOINT=/mcp
+    restart: unless-stopped
